@@ -1,0 +1,22 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Szczegóły Książki</h4>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{ book.title }}</h3>
+                <p class="card-text"><strong>Autor:</strong> {{ book.author }}</p>
+                <p class="card-text"><strong>Rok wydania:</strong> {{ book.year }}</p>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'book_list' %}" class="btn btn-secondary">Powrót</a>
+                    <a href="{% url 'book_edit' book.pk %}" class="btn btn-warning">Edytuj</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
